@@ -1,13 +1,10 @@
 <ul class="navbar cf">
+
   <li class="navbar" style="border-bottom: solid #00cccc 1px; margin: 1em;"><a href="<%= '/' %>"><%= image_tag 'test.png', size: 200, class: 'img-responsive' %> </a></li>
-  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= about_path %>"><%= image_tag 'abouti.png', width: 100, class: 'img-responsive' %></a>About Us</li>
-  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= contact_path %>"><%= image_tag 'contact-phone-icon-4.png', width: 100, class: 'img-responsive' %></a>Contact Us</li>
 
-  <% if user_signed_in? %>
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; font-size: 24px; color: darkslategray; margin: 1em;"><a href="<%= new_user_registration_path %>"><%= image_tag 'loginp.png', style: 'background: gray;', class: 'img-responsive', width: 100; %></a>Sign Out</li>
-    <% else %>
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; font-size: 24px; color: darkslategray; margin: 1em;"><a href="<%= new_user_session_path %>"><%= image_tag 'signout.png', class: 'img-responsive', width: 100; %></a>Log In</li>
+  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= about_path %>"><%= image_tag 'abouti.png', width: 100, class: 'img-responsive' %></a><%= link_to 'About', about_path %></li>
 
+  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= contact_path %>"><%= image_tag 'contact-phone-icon-4.png', width: 100, class: 'img-responsive' %></a><%= link_to 'Contact', contact_path %></li>
 
-    <% end %>
+  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= new_user_session_path %>"><%= image_tag 'login.png', class: 'img-responsive', size: 100 %></a><%= link_to 'Login', new_user_session_path %></li>
 </ul>

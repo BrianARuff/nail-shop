@@ -18,7 +18,7 @@ ul.navbar li {
 ul.navbar li a:hover,
 ul.navbar li:hover > a {
   background: #00cccc;
-  color: #fff !important;
+  color: #666769 !important;
 }
 
 body > ul > li > a > img:hover {
@@ -29,4 +29,12 @@ body > ul > li > a > img:hover {
 body > ul > li:hover {
   transition: background-color 0.75s ease;
   background: #00cccc;
+}
+
+body > ul > li > a {
+  color: #666769 !important;
+}
+
+body > ul > li > a:hover {
+  color: #666769 !important;
 }
