@@ -25,3 +25,8 @@ body > ul > li > a > img:hover {
   transition: background-color 0.75s ease;
   background: #00cccc;
 }
+
+body > ul > li:hover {
+  transition: background-color 0.75s ease;
+  background: #00cccc;
+}
