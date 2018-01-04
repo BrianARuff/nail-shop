@@ -6,8 +6,28 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', autofocus: true, placeholder: 'Name' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :username %>
+        <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :gender %>
+        <%= f.select :gender, User::GENDER_TYPES, class: 'form-control', placeholder: 'Gender' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label 'Date of Birth' %><br>
+        <%= f.date_select :dob, class: 'form-control', start_year: 1900, end_year: Date.today.year %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control' %>
       </div>
 
       <div class="form-group">
@@ -22,6 +42,8 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
       </div>
+
+      <%= f.hidden_field :role, value: 'guest' %>
 
       <div class="actions">
         <%= f.submit "Sign up", class: 'btn btn-primary btn-block' %>

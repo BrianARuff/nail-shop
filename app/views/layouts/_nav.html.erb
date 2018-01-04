@@ -12,9 +12,11 @@
 
     <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= new_user_registration_path %>"><%= image_tag 'signup.png', class: 'img-responsive', size: 100 %></a><%= link_to 'Sign Up', new_user_registration_path %></li>
 
-    <% else %>
+  <% else %>
 
-  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="Are you sure?"><%= image_tag 'signout.png', size: 100, class: 'img-responsive' %></a><%= link_to('Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}) %></li>
+    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;>"><a href="<%= edit_user_registration_path %>"><%= image_tag('editprofile.png', class: 'img-responsive', size: 100) %></a><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+
+    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 24px; margin: 1em;"><a href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="Are you sure?"><%= image_tag 'signout.png', size: 100, class: 'img-responsive' %></a><%= link_to('Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}) %></li>
 
   <% end %>
 </ul>
