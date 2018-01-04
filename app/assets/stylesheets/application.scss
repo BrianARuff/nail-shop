@@ -1,24 +1,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#bs-example-navbar-collapse-1 > ul:nth-child(1) > li > a {
-  background-color: transparent;
+ul.navbar {
+  background: #fff; /* Old browsers */
+  width: 960px;
+  margin: 2em auto;
 }
 
-body > nav > div > div.navbar-header {
-  padding: 25px;
-  margin-top: -2rem;
+ul.navbar li {
+  float: left;
+  margin: 0;
+  position: relative;
+  list-style: none;
 }
 
-body > nav > div > div.navbar-header, #bs-example-navbar-collapse-1 {
-  background-color: #00cccc !important;
+
+ul.navbar li a:hover,
+ul.navbar li:hover > a {
+  background: #00cccc;
+  color: #fff !important;
 }
 
-#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-brand.navbar-right > a > li {
-  color: #2E2F30 !important;
-}
-
-#bs-example-navbar-collapse-1 > ul > li > a {
-  color: #2E2F30 !important;
-  margin-top: 1rem;
+body > ul > li > a > img:hover {
+  transition: background-color 0.75s ease;
+  background: #00cccc;
 }

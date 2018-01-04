@@ -3,6 +3,7 @@
     <words>
       <w>authenticatable</w>
       <w>confirmable</w>
+      <w>navbar</w>
       <w>omniauthable</w>
       <w>registerable</w>
       <w>rememberable</w>
