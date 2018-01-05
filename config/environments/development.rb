@@ -53,4 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  GOOGLE_MAP_API = 'AIzaSyACvw6BTOzJJirhvI0FKDtqoVdpetJsTL0'
 end

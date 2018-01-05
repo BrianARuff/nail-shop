@@ -11,8 +11,17 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery3
+//= require jquery
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
+
+function myMap() {
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {
+        center: new google.maps.LatLng( 35.1890844,-80.87519040000001 ),
+        zoom: 10
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+}

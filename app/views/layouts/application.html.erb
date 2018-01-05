@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mimosas</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
 
     <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -11,9 +11,10 @@
 
   <body>
   <%= render 'layouts/nav'%>
-  <div class="container" style="clear: both;">
+  <div class="container">
     <%= yield %>
-    <h1 class="text-center">Place Holder Text</h1>
+    <h1 class="text-center"></h1>
+    <% unless current_page?('/careers') || current_page?('/users/edit') %>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo. Tortor at auctor urna nunc id cursus. Volutpat blandit aliquam etiam erat velit. Vitae et leo duis ut diam quam. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla malesuada pellentesque elit eget gravida cum. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Accumsan in nisl nisi scelerisque eu ultrices. Diam vulputate ut pharetra sit. Viverra orci sagittis eu volutpat. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Leo in vitae turpis massa sed elementum. Habitant morbi tristique senectus et netus et malesuada.
     </p>
@@ -28,6 +29,7 @@
     <p>
       Duis at tellus at urna condimentum mattis. In nisl nisi scelerisque eu ultrices vitae. Faucibus turpis in eu mi bibendum neque. Diam ut venenatis tellus in metus vulputate eu scelerisque. Feugiat scelerisque varius morbi enim nunc faucibus a. Amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Eu ultrices vitae auctor eu augue ut lectus arcu. Posuere ac ut consequat semper. Lobortis feugiat vivamus at augue eget arcu dictum varius. Eget arcu dictum varius duis at consectetur lorem donec massa.
     </p>
+    <% end %>
     <%= render 'layouts/footer' %>
   </div>
   </body>

@@ -1,13 +1,11 @@
-@import "bootstrap";
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
-
-
-.container {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 5em;
-  margin-bottom: 5px;
-}
+@import "bootstrap";
+//
+//.container {
+//  padding-top: 10em;
+//  padding-bottom: 10em;
+//}
 
 body {
   color: #666769;
