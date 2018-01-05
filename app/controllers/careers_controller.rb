@@ -1,4 +1,5 @@
 class CareersController < ApplicationController
+  include ActionView::Helpers::TextHelper
 
   before_action :set_career, only: [:show, :edit, :update, :destroy]
 

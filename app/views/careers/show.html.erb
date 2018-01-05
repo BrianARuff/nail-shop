@@ -1,5 +1,6 @@
 <h3><%= @career.position.capitalize.html_safe %><br>
-    <%= @career.location.capitalize.html_safe %><br>
-    <%= @career.description.split.each { |word| word.capitalize!}.join(' ') %><br>
-    Posted By: <%= @career.user.username.split.each { |name| name.capitalize! }.join(' ') %><br>
-    Created At: <%= @career.created_at.strftime('%m/%d/%Y at %I:%M %p EST') %></h3>
+  <%= @career.location.capitalize.html_safe %><br>
+  <%= (@career.description.split.each { |word| word.capitalize!}.join(' ')).html_safe.gsub %><br>
+  Posted By: <%= @career.user.username.split.each { |name| name.capitalize! }.join(' ') %><br>
+  Created At: <%= @career.created_at.strftime('%m/%d/%Y at %I:%M %p EST') %>
+</h3>

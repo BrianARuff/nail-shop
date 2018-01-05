@@ -1,10 +1,21 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-sprockets";
+
+
+.container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 5em;
+  margin-bottom: 5px;
+}
+
+body {
+  color: #666769;
+}
 
 ul.navbar {
-  background: #fff; /* Old browsers */
   width: 960px;
-  margin: 2em auto;
+  margin: 0 auto;
 }
 
 ul.navbar li {
@@ -21,22 +32,45 @@ ul.navbar li:hover > a {
   color: #666769 !important;
 }
 
-body > ul > li > a > img:hover {
-  transition: background-color 0.75s ease;
+body > ul > li > a > img:hover, body > div > ul > li:hover {
+  transition: background-color 3s ease !important;
   background: #00cccc;
+  text-decoration: none;
 }
 
 body > ul > li:hover {
-  transition: background-color 0.75s ease;
+  transition: background-color 3s ease !important;
   background: #00cccc;
+  text-decoration: none;
+
 }
 
 body > ul > li > a {
   color: #666769 !important;
+
 }
 
 body > ul > li > a:hover {
+  transition: background-color 3s ease !important;
   color: #666769 !important;
+  text-decoration: none;
+}
+
+body > ul > li > a, body > div > ul > li > a {
+  transition: background-color 5s ease !important;
+  color: #666769 !important;
+  text-decoration: none;
+}
+
+body > div > ul > li > a:hover {
+  transition: background-color 3s ease !important;
+  color: #666769 !important;
+  text-decoration: none;
+}
+
+body > div > ul > li > a {
+  color: #666769 !important;
+  text-decoration: none;
 }
 
 #user_gender {
