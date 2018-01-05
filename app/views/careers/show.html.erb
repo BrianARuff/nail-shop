@@ -1,6 +1,10 @@
-<h3><%= @career.position.capitalize.html_safe %><br>
-  <%= @career.location.capitalize.html_safe %><br>
-  <%= (@career.description.split.each { |word| word.capitalize!}.join(' ')).html_safe.gsub %><br>
-  Posted By: <%= @career.user.username.split.each { |name| name.capitalize! }.join(' ') %><br>
-  Created At: <%= @career.created_at.strftime('%m/%d/%Y at %I:%M %p EST') %>
+<strong><strong>Job Title:</strong> <%= @career.position.capitalize.html_safe %><br><br>
+  <strong>Location:</strong><%= @career.location.capitalize.html_safe %><br><br>
+  Job Description:</strong> <%= simple_format((@career.description.html_safe)) %>
+  <strong>Posted By:</strong> <%= @career.user.username.split.each { |name| name.capitalize! }.join(' ') %><br>
+  Created At: <%= @career.created_at.strftime('%m/%d/%Y at %I:%M %p EST') %><br>
+  <% if @career.user_id == current_user.id || current_user.role == 'admin' %><br>
+    <%= link_to 'Edit', edit_career_path(@career), class: 'btn btn-warning btn-block' %>
+    <%= link_to 'Delete', career_path(@career), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-block' %>
+  <% end %>
 </h3>

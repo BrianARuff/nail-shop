@@ -1,21 +1,17 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+< class="row">
+  < class="col-md-6 col-md-offset-3">
     <% @careers.each do |career| %>
-      <h2 class="text-center">Job Title: <%= career.position.capitalize %></h2>
-      <h3 class="text-center">Posted at: <%= career.created_at.strftime('%m/%d/%Y at %I %p') %></h3>
-      <h3 class="text-justify">Job Description: <%= simple_format(career.description.capitalize.html_safe) %> </h3>
-      <h5><strong>Posted By: <%= career.user.name.split.each { |name| name.capitalize! }.join(' ').html_safe %></strong></h5>
+  <h2 class="text-center" style="text-decoration: underlineclear;">Job Title: <%= career.position.capitalize %></h2>
+  <h3 class="text-center"><strong>Posted: </strong><%= career.created_at.strftime('%A, %b %Y at %I:%M %p') %></h3>
+      <h3 class="text-justify"><strong>Job Description:</strong> <%= simple_format(career.description.capitalize.html_safe) %> </h3>
+      <h5><strong>Posted By: <%= career.user.email.split.each { |name| name.capitalize! }.join(' ').html_safe %></strong></h5>
       <h5><strong>Location: <%= career.location %></strong></h5>
-      <% if current_user.id == career.id  %>
+      <%= link_to 'See Job', career, class: 'btn btn-primary btn-block' %>
+      <% if current_user.role == 'admin'  %>
         <%= link_to 'Edit', edit_career_path(career), class: 'btn btn-warning btn-block' %>
         <%= link_to 'Delete', career_path(career), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-block' %>
+        <%= link_to 'Crew New Job', new_career_path, class: 'btn btn-success btn-block' %>
       <% end %>
-    <% end %>
-    <% if current_user.role == 'admin' %>
-
-      <h2>
-        <%= link_to 'Crew New Job', new_career_path, class: 'btn btn-primary btn-block' %>
-      </h2>
     <% end %>
 
   </div>
