@@ -1,28 +1,30 @@
 
 <ul class="navbar" style="background: transparent;">
 
-  <li class="navbar" style="border-bottom: solid #00cccc 1px; margin: 1em;"><a href="<%= home_path %>"><%= image_tag 'test.png', width: 105, class: 'img-responsive' %> </a></li>
+  <li class="navbar" style="border-bottom: solid #00cccc 1px; margin: 1em;"><a href="<%= home_path %>"><%= image_tag 'test.png', width: 120, class: 'img-responsive' %> </a></li>
 
-  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= about_path %>"><%= image_tag 'abouti.png', width: 50, class: 'img-responsive' %></a><%= link_to 'About', about_path %></li>
+  <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= about_path %>"><%= image_tag 'abouti.png', width: 50, class: 'img-responsive' %></a><%= link_to 'About', about_path %></li>
 
-  <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= contact_path %>"><%= image_tag 'contact-phone-icon-4.png', width: 50, class: 'img-responsive' %></a><%= link_to 'Contact', contact_path %></li>
+  <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= contact_path %>"><%= image_tag 'contact-phone-icon-4.png', width: 50, class: 'img-responsive' %></a><%= link_to 'Contact', contact_path %></li>
 
   <% if !user_signed_in? %>
 
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= new_user_session_path %>"><%= image_tag 'login.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Log In', new_user_session_path %></li>
+    <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= new_user_session_path %>"><%= image_tag 'login.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Log In', new_user_session_path %></li>
 
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= new_user_registration_path %>"><%= image_tag 'signup.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= new_user_registration_path %>"><%= image_tag 'signup.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Sign Up', new_user_registration_path %></li>
 
   <% else %>
 
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;>"><a href="<%= edit_user_registration_path %>"><%= image_tag('editprofile.png', class: 'img-responsive', size: 50) %></a><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+    <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;>"><a href="<%= edit_user_registration_path %>"><%= image_tag('editprofile.png', class: 'img-responsive', size: 50) %></a><%= link_to 'Edit Profile', edit_user_registration_path %></li>
 
-    <li class="text-center" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="Are you sure?"><%= image_tag 'Logout-512.png', size: 50, class: 'img-responsive' %></a><%= link_to('Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}) %></li>
+    <li class="" style="border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px; margin: 1em;"><a href="<%= destroy_user_session_path %>" data-method="delete" data-confirm="Are you sure?"><%= image_tag 'Logout-512.png', size: 50, class: 'img-responsive' %></a><%= link_to('Sign Out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?'}) %></li>
 
   <% end %>
 
-  <li class="text-center" style="margin: 1em; border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px;"><a href= 'https://www.instagram.com/mimosasandnails/?hl=en'><%= image_tag 'instagram.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Instagram', 'https://www.instagram.com/mimosasandnails/?hl=en' %></li>
+  <li class="text-center" style="border-bottom: solid #00cccc 1px; margin: 1em; color: slategray; font-size: 16px;"><a href="<%= careers_path %>"><%= image_tag 'jobs.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Careers', careers_path %></li>
 
-  <li class="text-center" style="margin: 1em; border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px;"><a href="https://www.facebook.com/mimosasandnails/"><%= image_tag 'fb.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Facebook', 'https://www.facebook.com/mimosasandnails/' %></li>
+  <li class="" style="margin: 1em; border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px;"><a href= 'https://www.instagram.com/mimosasandnails/?hl=en'><%= image_tag 'instagram.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Instagram', 'https://www.instagram.com/mimosasandnails/?hl=en' %></li>
+
+  <li class="" style="margin: 1em; border-bottom: solid #00cccc 1px; color: darkslategray; font-size: 16px;"><a href="https://www.facebook.com/mimosasandnails/"><%= image_tag 'fb.png', class: 'img-responsive', size: 50 %></a><%= link_to 'Facebook', 'https://www.facebook.com/mimosasandnails/' %></li>
 
 </ul>
