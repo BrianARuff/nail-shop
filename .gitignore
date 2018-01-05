@@ -17,7 +17,3 @@
 /yarn-error.log
 
 .byebug_history
-
-/config/development.rb
-/config/test.rb
-/config/production.rb
