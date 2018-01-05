@@ -12,8 +12,8 @@
       <% if current_user.role == 'admin'  %>
         <%= link_to 'Edit', edit_career_path(career), class: 'btn btn-warning btn-block' %>
         <%= link_to 'Delete', career_path(career), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-block' %>
-        <%= link_to 'Crew New Job', new_career_path, class: 'btn btn-success btn-block' %>
       <% end %>
     <% end %>
+    <%= link_to 'Crew New Job', new_career_path, class: 'btn btn-success btn-block' %>
   </div>
 </div>
