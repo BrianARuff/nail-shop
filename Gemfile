@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bcrypt'
 gem 'jquery-ui-rails'
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
