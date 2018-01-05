@@ -6,7 +6,9 @@
       <h3 class="text-justify"><strong>Job Description:</strong> <%= simple_format(career.description.capitalize.html_safe) %> </h3>
       <h5><strong>Posted By: <%= career.user.email.split.each { |name| name.capitalize! }.join(' ').html_safe %></strong></h5>
       <h5><strong>Location: <%= career.location %></strong></h5>
+      <% if user_signed_in? %>
       <%= link_to 'See Job', career, class: 'btn btn-primary btn-block' %>
+      <% end %>
       <% if current_user.role == 'admin'  %>
         <%= link_to 'Edit', edit_career_path(career), class: 'btn btn-warning btn-block' %>
         <%= link_to 'Delete', career_path(career), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-block' %>
