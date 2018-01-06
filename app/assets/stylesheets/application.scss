@@ -3,7 +3,7 @@
 @import "bootstrap";
 
 body {
-  color: black;
+  color: #666769;
   font-weight: bold;
   font-size: 24px;
   background: url('bed.jpeg') no-repeat center center fixed;
@@ -11,6 +11,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Bellefair', serif;
 }
 
 ul.navbar {
