@@ -16,15 +16,7 @@
 <%= render 'layouts/nav'%>
 <div style="float: left;">
   <div style="background:ghostwhite;" class="col-md-7 col-md-3">
-    <h1 class="text-center" style="font-weight: bold;">Display Only</h1>
-    <%= image_tag @images.shop_image1, class: 'img-responsive', size: 100 %>
-    <%= image_tag @images.shop_image2, class: 'img-responsive', size: 100 %>
-    <%= image_tag @images.shop_image3, class: 'img-responsive', size: 100 %>
-    <%= image_tag @images.shop_image4, class: 'img-responsive', size: 100 %>
-    <%= image_tag @images.shop_image5, class: 'img-responsive', size: 100 %><br>
-    <% if user_signed_in? && current_user.role == 'admin' %>
-      <%= link_to 'Edit Images', edit_image_path(@images), class: 'btn btn-block btn-warning' %>
-    <% end %>
+
   </div>
 </div>
 <div class="container">
