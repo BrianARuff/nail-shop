@@ -1,6 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
-  has_many :images
+  has_many :image
 
 end
