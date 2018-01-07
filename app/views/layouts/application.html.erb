@@ -12,7 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body style="background: url(<%= @images.background_image  %>) center center no-repeat fixed; background-size: cover;">
+<body style="background: url(<%= @images.background_image unless @images.background_image.nil  %>) center center no-repeat fixed; background-size: cover;">
 <%= render 'layouts/nav'%>
 <div style="float: left;">
   <div style="background:ghostwhite;" class="col-md-7 col-md-3">
