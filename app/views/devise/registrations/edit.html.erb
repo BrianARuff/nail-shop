@@ -7,7 +7,7 @@
       <%= devise_error_messages! %>
 
 
-      <% if user_signed_in? && User.second.id == current_user.id %>
+      <% if (User.second.id == current_user.id || current_user.role == 'admin') && user_signed_in? %>
         <%= f.label :background %>
         <%= f.file_field :background %>
 
