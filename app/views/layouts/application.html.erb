@@ -12,9 +12,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background: url(<%= User.second.background %>)">
   <%= render 'layouts/nav'%>
   <div class="container">
+    <%= image_tag User.second.random, class: 'img-responsive'  %>
+    <% if user_signed_in? && current_user.role == 'admin' %>
+      <%= link_to 'Edit Pictures', edit_user_registration_path, class: 'btn btn-warning' %>
+    <% end %>
     <%= yield %>
     <h1 class="text-center"></h1>
     <% unless current_page?('/careers') || current_page?('/users/edit') || current_page?("/careers/#{params[:id]}") || current_page?('/users/sign_up') || current_page?('/users/sign_out') || current_page?('/users/sign_in') || current_page?('/careers') %>

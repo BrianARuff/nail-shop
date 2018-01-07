@@ -9,5 +9,8 @@ class User < ApplicationRecord
 
   has_many :careers
 
+  mount_uploader :background, BackgroundUploader
+  mount_uploader :random, RandomUploader
+
   GENDER_TYPES = ['Prefer not to answer', 'Male', 'Female']
 end

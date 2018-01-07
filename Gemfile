@@ -7,6 +7,7 @@ end
 
 ruby '2.5.0'
 
+gem 'carrierwave'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'devise'
