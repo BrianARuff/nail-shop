@@ -12,10 +12,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background: url(<%= @admin.first.background %>) center center no-repeat; background-size: cover;">
+  <body style="background: url(<%= @admin.second.background %>) center center no-repeat; background-size: cover;">
   <%= render 'layouts/nav'%>
   <div class="container">
-    <%= image_tag @admin.first.random, class: 'img-responsive', style: 'margin-left: auto; margin-right: auto;'%>
+    <%= image_tag @admin.second.random, class: 'img-responsive', style: 'margin-left: auto; margin-right: auto;'%>
     <% if user_signed_in? && current_user.role == 'admin' %>
       <%= link_to 'Edit Pictures', edit_user_registration_path, class: 'btn btn-warning' %>
     <% end %>
