@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
 
   def images
     @images = Image.first
-    @all_images = Image
   end
 
 end

@@ -3,5 +3,4 @@ class Career < ApplicationRecord
 
   validates :position, :location, :description, :user_id, presence: true
 
-  has_many :images
 end

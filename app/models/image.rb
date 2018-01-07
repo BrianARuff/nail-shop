@@ -1,8 +1,6 @@
 class Image < ApplicationRecord
 
   belongs_to :user
-  belongs_to :application_record
-  belongs_to :career
 
   mount_uploader :background_image, BackgroundUploader
   mount_uploader :shop_image1, ShopImage1Uploader
