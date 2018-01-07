@@ -7,11 +7,11 @@
       <%= devise_error_messages! %>
 
 
-      <% if (User.second.id == current_user.id || current_user.role == 'admin') && user_signed_in? %>
+      <% if user_signed_in? && current_user.role == 'admin' %>
         <%= f.label :background %>
         <%= f.file_field :background %>
 
-        <%= f.label 'Test Image' %>
+        <%= f.label 'Test Image'%>
         <%= f.file_field :random %>
       <% end %>
 
