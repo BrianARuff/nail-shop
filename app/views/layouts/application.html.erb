@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= yield(:title) %></title>
-    <%= csrf_meta_tags %>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= csrf_meta_tags %>
 
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body style="background: url(<%= @admin.second.background %>) center center no-repeat fixed; background-size: cover;">
-  <%= render 'layouts/nav'%>
-  <div class="container">
-    <%= image_tag @admin.second.random, class: 'img-responsive', style: 'margin-left: auto; margin-right: auto;'%>
+<body style="background: url(<%= @images.background_image  %>) center center no-repeat fixed; background-size: cover;">
+<%= render 'layouts/nav'%>
+<%= image_tag @images.shop_image1, class: 'img-responsive jumbotron', style: 'margin-left: auto; margin-right: auto; margin-top: 1em;'%>
+<div style="float: left;">
+  <div style="background:ghostwhite;" class="col-md-3 col-md-1">
+    <h1 class="text-center" style="font-weight: bold;">Display Only</h1>
+    <%= image_tag @images.shop_image1, class: 'img-responsive', size: 500 %>
+    <%= image_tag @images.shop_image2, class: 'img-responsive', size: 500 %>
+    <%= image_tag @images.shop_image3, class: 'img-responsive', size: 500 %>
+    <%= image_tag @images.shop_image4, class: 'img-responsive', size: 500 %>
+    <%= image_tag @images.shop_image5, class: 'img-responsive', size: 500 %><br>
     <% if user_signed_in? && current_user.role == 'admin' %>
-      <%= link_to 'Edit Pictures', edit_user_registration_path, class: 'btn btn-warning' %>
+      <%= link_to 'Edit Images', edit_image_path(@images), class: 'btn btn-block btn-warning' %>
     <% end %>
-    <%= yield %>
-    <h1 class="text-center"></h1>
-    <% unless current_page?('/careers') || current_page?('/users/edit') || current_page?("/careers/#{params[:id]}") || current_page?('/users/sign_up') || current_page?('/users/sign_out') || current_page?('/users/sign_in') || current_page?('/careers') %>
-      <h1 class="text-center"><%= yield(:title) %></h1>
+  </div>
+</div>
+<div class="container">
+  <%= yield %>
+  <h1 class="text-center"></h1>
+  <% if current_page?('static_pages/index' || current_page?('static_pages/contact') || current_page?('static_pages/about')) %>
+    <h1 class="text-center"><%= yield(:title) %></h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo. Tortor at auctor urna nunc id cursus. Volutpat blandit aliquam etiam erat velit. Vitae et leo duis ut diam quam. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla malesuada pellentesque elit eget gravida cum. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Accumsan in nisl nisi scelerisque eu ultrices. Diam vulputate ut pharetra sit. Viverra orci sagittis eu volutpat. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Leo in vitae turpis massa sed elementum. Habitant morbi tristique senectus et netus et malesuada.
     </p>
 
-    <% end %>
-  </div>
-  <%= render 'layouts/footer' %>
-  </body>
+  <% end %>
+</div>
+<%= render 'layouts/footer' %>
+</body>
 </html>

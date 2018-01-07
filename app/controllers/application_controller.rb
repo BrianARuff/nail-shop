@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
   before_action :admin_user
+
+  before_action :images
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -12,6 +15,11 @@ class ApplicationController < ActionController::Base
 
   def admin_user
     @admin = User.where(role: 'admin')
+  end
+
+  def images
+    @images = Image.first
+    @all_images = Image
   end
 
 end

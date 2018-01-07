@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   has_many :careers
+  has_many :images
 
   mount_uploader :background, BackgroundUploader
   mount_uploader :random, RandomUploader

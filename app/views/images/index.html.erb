@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% if Image.count < 2 %>
+      <%= link_to 'Create Images', new_image_path, class: 'btn btn-block btn-primary' %>
+    <% end %>
+    <% @images.each do |image| %>
+      <h2 class="text-center">Background Image</h2>
+      <%= link_to 'Edit All Images', edit_image_path(image.background_image), class: 'btn btn-block btn-warning' %>
+      <%= link_to 'Delete All Images', image_path(image.background_image), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-block btn-danger' %>
+      <%= image_tag(image.background_image, class: 'img-responsive')  %>
+      <h2 class="text-center">Shop Image One</h2>
+      <%= image_tag(image.shop_image1, class: 'img-responsive')  %>
+      <h2 class="text-center">Shop Image Two</h2>
+      <%= image_tag(image.shop_image2, class: 'img-responsive')  %>
+      <h2 class="text-center">Shop Image Three</h2>
+      <%= image_tag(image.shop_image3, class: 'img-responsive')  %>
+      <h2 class="text-center">Shop Image Four</h2>
+      <%= image_tag(image.shop_image4, class: 'img-responsive')  %>
+      <h2 class="text-center">Shop Image Five</h2>
+      <%= image_tag(image.shop_image5, class: 'img-responsive')  %>
+    <% end %><br>
+  </div>
+</div>
