@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html {redirect_to @image, notice: 'Image Updated'}
+        format.html {redirect_to root_path, notice: 'Image Updated'}
       else
         format.html {render :edit, notice: 'Image failed to updated'}
       end
