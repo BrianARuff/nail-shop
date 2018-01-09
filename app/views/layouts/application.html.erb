@@ -17,38 +17,34 @@
   <div style="background:rgba(255,255,255,0.8); border-radius: 15px;"
        class="col-md-10
   col-md-5">
-    <h1 class="text-center" style="font-weight: bold;">Display Only</h1>
+    <% if user_signed_in? && current_user.role == 'admin' %>
+      <%= link_to 'Edit Images', edit_image_path(@images), class:
+          'btn btn-warning btn-block' %>
+    <% end %>
+    <h1 class="text-center" style="font-weight: bold;">Test Display Only</h1>
+    <hr style="border: 1px solid #00cccc;">
     <h3 class="text-center">Background Image</h3>
-    <%= image_tag @images.shop_image1, class: 'img-responsive', size: 100 %><br>
-    <pre class="glyphicon-text-color" style="display:
+    <%= image_tag @images.background_image, class: 'img-responsive', size:
+        100 %><br>
+    <pre class="glyphicon-text-color text-center" style="width: 100%; display:
         inline-block; font-size: 12px; text-decoration: underline">Shop Images<span
     class="glyphicon-text-color"></span></pre>
+    <%= image_tag @images.shop_image1, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image2, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image3, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image4, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image5, class: 'img-responsive', size: 100 %><br>
-    <% if user_signed_in? && current_user.role == 'admin' %>
-      <%= link_to 'Edit Images', edit_image_path(@images), class:
-          'btn btn-block btn-warning' %>
-    <% end %>
   </div>
 </div>
 <div class="container" style="background: rgba(255,255,255,0.8) !important; border-radius: 25px;">
   <%= yield %>
+
   <% if current_page?('/home' || current_page?('/contact') || current_page?('/about')) || current_page?('/') %>
     <h1 class="text-center"><%= yield(:title) %></h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo. Tortor at auctor urna nunc id cursus. Volutpat blandit aliquam etiam erat velit. Vitae et leo duis ut diam quam. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla malesuada pellentesque elit eget gravida cum. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Accumsan in nisl nisi scelerisque eu ultrices. Diam vulputate ut pharetra sit. Viverra orci sagittis eu volutpat. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Leo in vitae turpis massa sed elementum. Habitant morbi tristique senectus et netus et malesuada.
     </p>
   <% end %>
-  <div style="margin-top: 0;">
-    <%= yield %>
-    <% if current_page?('/home' || current_page?('/contact') || current_page?('/about')) || current_page?('/') %>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo. Tortor at auctor urna nunc id cursus. Volutpat blandit aliquam etiam erat velit. Vitae et leo duis ut diam quam. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla malesuada pellentesque elit eget gravida cum. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Accumsan in nisl nisi scelerisque eu ultrices. Diam vulputate ut pharetra sit. Viverra orci sagittis eu volutpat. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Leo in vitae turpis massa sed elementum. Habitant morbi tristique senectus et netus et malesuada
-      </p>
-    <% end %>
-  </div>
 </div>
 <%= render 'layouts/footer' %>
 </body>
