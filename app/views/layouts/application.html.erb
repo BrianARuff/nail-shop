@@ -14,21 +14,22 @@
 <body style="background: url(<%= @images.background_image %>) center center no-repeat fixed; background-size: cover;">
 <%= render 'layouts/nav'%>
 <div style="float: left;">
-  <div style="background:rgba(255,255,255,0.8); border-radius: 25px;"
-       class="col-md-8
-  col-md-4">
+  <div style="background:rgba(255,255,255,0.8); border-radius: 15px;"
+       class="col-md-10
+  col-md-5">
     <h1 class="text-center" style="font-weight: bold;">Display Only</h1>
     <h3 class="text-center">Background Image</h3>
     <%= image_tag @images.shop_image1, class: 'img-responsive', size: 100 %><br>
     <pre class="glyphicon-text-color" style="display:
-    inline-block; font-size: 12px; text-decoration: underline">Shop Images<span
+        inline-block; font-size: 12px; text-decoration: underline">Shop Images<span
     class="glyphicon-text-color"></span></pre>
     <%= image_tag @images.shop_image2, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image3, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image4, class: 'img-responsive', size: 100 %><br>
     <%= image_tag @images.shop_image5, class: 'img-responsive', size: 100 %><br>
     <% if user_signed_in? && current_user.role == 'admin' %>
-      <%= link_to 'Edit Images', edit_image_path(@images), class: 'btn btn-block btn-warning' %>
+      <%= link_to 'Edit Images', edit_image_path(@images), class:
+          'btn btn-block btn-warning' %>
     <% end %>
   </div>
 </div>
